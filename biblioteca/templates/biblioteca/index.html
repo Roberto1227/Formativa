@@ -1,0 +1,36 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Inicio - Biblioteca{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="display-4 mb-4">Bienvenido a la Biblioteca</h1>
+        <p class="lead">Sistema de gestión de autores y libros</p>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Autores</h5>
+                <p class="card-text">Gestiona los autores de la biblioteca.</p>
+                <a href="{% url 'listar_autores' %}" class="btn btn-primary">Ver Autores</a>
+                <a href="{% url 'crear_autor' %}" class="btn btn-success">Crear Autor</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Libros</h5>
+                <p class="card-text">Gestiona los libros de la biblioteca.</p>
+                <a href="{% url 'listar_libros' %}" class="btn btn-primary">Ver Libros</a>
+                <a href="{% url 'crear_libro' %}" class="btn btn-success">Crear Libro</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

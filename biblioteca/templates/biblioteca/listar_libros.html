@@ -1,0 +1,46 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block title %}Lista de Libros{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Lista de Libros</h1>
+        <a href="{% url 'crear_libro' %}" class="btn btn-primary mb-3">Crear Nuevo Libro</a>
+        
+        {% if libros %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th>ISBN</th>
+                            <th>Fecha de Publicación</th>
+                            <th>Páginas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in libros %}
+                        <tr>
+                            <td>{{ libro.id }}</td>
+                            <td>{{ libro.titulo }}</td>
+                            <td>{{ libro.autor.nombre }} {{ libro.autor.apellido }}</td>
+                            <td>{{ libro.isbn|default:"-" }}</td>
+                            <td>{{ libro.fecha_publicacion|default:"-" }}</td>
+                            <td>{{ libro.paginas|default:"-" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                No hay libros registrados. <a href="{% url 'crear_libro' %}">Crear el primero</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
