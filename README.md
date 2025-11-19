@@ -68,6 +68,6 @@ python manage.py runserver
 
 Hecho por: 
 
--Roberto Carlos Chavez Campos
+-Roberto Carlos Chavez Campos(SMTR044024)
 
--Edwin Josue Parada Campos
+-Edwin Josue Parada Campos(SMTR043624)
